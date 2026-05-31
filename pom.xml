@@ -12,10 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- code needs to be compatible with this version of Java -->
-        <maven.compiler.source>25</maven.compiler.source>
-        <!-- code is executed using this version of Java -->
-        <maven.compiler.target>25</maven.compiler.target>
+        <!-- code is compiled against and runs on this version of Java -->
+        <maven.compiler.release>25</maven.compiler.release>
     </properties>
 
     <licenses>
@@ -48,8 +46,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.15.0</version>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
             <plugin>
