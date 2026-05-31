@@ -19,19 +19,17 @@ How to do stuff.
      - Breaking changes → increase major (`X.*.*`)
      - New features or dependency upgrades → minor (`*.Y.*`)
      - Bug fixes → patch (`*.*.Z`)
-3. Build, sign, and upload to Sonatype Central Portal:
+3. Build, sign, upload, and publish to Sonatype Central Portal:
    - `mvn release:perform`
    - Enter your GPG passphrase when prompted.
-4. Approve the upload on Central Portal:
-   - Open https://central.sonatype.com/publishing/deployments
-   - Find the deployment matching the version. It should be in state `VALIDATED`.
-   - Review the file list and signatures, then click **Publish**.
+   - `autoPublish=true` in `pom.xml` makes the deployment auto-promote
+     once validation passes — no manual click required.
    - The artifact lands on `repo.maven.apache.org` ~10–30 minutes later.
-   - (Once you trust the flow, you can flip `autoPublish` to `true` in `pom.xml` to skip the manual click.)
-5. Push tags and the bump commits:
+   - You can watch progress at https://central.sonatype.com/publishing/deployments.
+4. Push tags and the bump commits:
    - `git push --follow-tags`
-6. Regenerate and commit the published Javadoc (see [Generate Javadoc](#generate-javadoc)).
-7. On GitHub, draft a release at https://github.com/dialex/JColor/releases:
+5. Regenerate and commit the published Javadoc (see [Generate Javadoc](#generate-javadoc)).
+6. On GitHub, draft a release at https://github.com/dialex/JColor/releases:
    - Select the tag created by `release:prepare`.
    - Describe the changes (highlight breaking changes if any).
 
