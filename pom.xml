@@ -38,7 +38,7 @@
         <connection>scm:git:git@github.com:dialex/jcolor.git</connection>
         <developerConnection>scm:git:git@github.com:dialex/jcolor.git</developerConnection>
         <url>https://github.com/dialex/JColor/tree/main</url>
-        <tag>v5.2.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
